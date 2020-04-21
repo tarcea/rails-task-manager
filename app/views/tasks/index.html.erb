@@ -5,19 +5,20 @@
     <div class="col-6">
       <ul class="list-group">
         <% @tasks.each do |task| %>
-        <li class="list-group-item text-center">
+        <li class="list-group-item text-center border-0">
           <% if task.completed %>
-          <%= "done" %>
+          <%= "done" %> |
           <% else %>
-          <%= "in work" %>
+          <%= "in work" %> |
           <% end %>
-          <%= link_to task.title, task_path(task) %> | <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></li>
+          <%= link_to task.title, task_path(task) %> | <%= link_to '<i class="fas fa-trash"></i> delete'.html_safe, task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></li>
           <% end %>
       </ul>
+      <%= link_to "Ad a new task", new_task_path, class:'btn btn-primary' %>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to "Ad a new task", new_task_path %>
 
 
 
