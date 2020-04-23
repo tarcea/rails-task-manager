@@ -1,10 +1,12 @@
-
-
-      <h1><%= @task.title %></h1>
+<h1 class="text-center"><%= @task.title %></h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
       <p><%= @task.details %></p>
       <% @task.completed %>
-      <%= link_to "Back to list", tasks_path %>
-      <br>
-      <%= link_to "Edit me", edit_task_path %>
+      <%= link_to "Edit me", edit_task_path, class:"btn btn-primary" %>
+      <br><br>
+      <%= link_to "Back to list", tasks_path, class:"btn btn-primary" %>
+    </div>
   </div>
 </div>

@@ -1,20 +1,16 @@
-
 <h1 class="text-center">My Tasks</h1>
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-12">
       <ul class="list-group">
         <% @tasks.each do |task| %>
         <li class="list-group-item text-center border-0">
-          <% if task.completed %>
-          <%= status = "done" %> |
-          <% else %>
-          <%= status = "in work" %> |
-          <% end %>
-          <%= link_to task.title, task_path(task) %> | <%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></li>
+          <!-- in the line below, status method is called from task.rb(model) -->
+           <%= "status: #{task.status(task)} " %> |
+          <%= link_to task.title, task_path(task)%> | <%= link_to '<i class="fa fa-edit"></i> edit'.html_safe, edit_task_path(task) %> | <%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></li>
           <% end %>
       </ul>
-      <%= link_to "Ad a new task", new_task_path, class:'btn btn-primary' %>
+      <div class="text-center"><%= link_to "Ad a new task", new_task_path, class:'btn btn-primary' %></div>
     </div>
   </div>
 </div>
