@@ -14,3 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// const radio = document.querySelector('.form-check-input');
+// console.log(radio);

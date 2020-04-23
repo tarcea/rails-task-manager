@@ -7,11 +7,11 @@
         <% @tasks.each do |task| %>
         <li class="list-group-item text-center border-0">
           <% if task.completed %>
-          <%= "done" %> |
+          <%= status = "done" %> |
           <% else %>
-          <%= "in work" %> |
+          <%= status = "in work" %> |
           <% end %>
-          <%= link_to task.title, task_path(task) %> | <%= link_to '<i class="fas fa-trash"></i> delete'.html_safe, task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></li>
+          <%= link_to task.title, task_path(task) %> | <%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, task_path(task), method: :delete, data: { confirm: "Are you sure?" } %></li>
           <% end %>
       </ul>
       <%= link_to "Ad a new task", new_task_path, class:'btn btn-primary' %>

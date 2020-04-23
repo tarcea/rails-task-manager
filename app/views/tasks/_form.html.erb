@@ -1,8 +1,9 @@
 
-<%= form_for(@task) do |f| %>
+<%= simple_form_for(@task) do |f| %>
 <div class="form-check">
-  <%= f.label :completed %>
-  <%= f.text_field :completed, class: 'form-check-input' %>
+  <!-- <%= f.label :completed %> -->
+  <!-- <%= f.text_field :completed, class: 'form-check-input' %> -->
+  <%= f.input :completed, as: :radio_buttons, collection: [['false', 'in work'], ['true', 'done']], label_method: :second, value_method: :first %>
 </div>
 
 <div class="form-group">
